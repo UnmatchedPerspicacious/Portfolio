@@ -42,27 +42,31 @@ const skills = [
 export function Skills() {
   return (
     <section id="skills" className="py-24 px-6 md:px-12 lg:px-24">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-4 mb-12">
+      <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
+        {/* Section Tag */}
+        <div className="flex items-center gap-4 mb-12 justify-center">
           <div className="w-12 h-px bg-primary" />
           <span className="text-primary font-mono text-sm tracking-wider uppercase">
             Skills
           </span>
+          <div className="w-12 h-px bg-primary" /> {/* Symmetric right accent line */}
         </div>
 
+        {/* Section Headers */}
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
           What I Bring to the Table
         </h2>
-        <p className="text-muted-foreground text-lg mb-12 max-w-2xl">
+        <p className="text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
           A diverse skill set built through years of hands-on experience in
           technology, business, and innovation.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Grid Container */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
           {skills.map((skill) => (
             <div
               key={skill.title}
-              className="group bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300"
+              className="group bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 flex flex-col items-center"
             >
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                 <skill.icon className="w-6 h-6 text-primary" />

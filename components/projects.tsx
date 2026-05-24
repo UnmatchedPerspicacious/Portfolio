@@ -47,61 +47,73 @@ export function Projects() {
   return (
     <section id="projects" className="py-24 px-6 md:px-12 lg:px-24 bg-card">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-4 mb-12">
-          <div className="w-12 h-px bg-primary" />
-          <span className="text-primary font-mono text-sm tracking-wider uppercase">
-            Projects
-          </span>
+        
+        {/* Centered Head Text Wrapper */}
+        <div className="flex flex-col items-center text-center mb-12">
+          {/* Section Tag */}
+          <div className="flex items-center gap-4 mb-4 justify-center">
+            <div className="w-12 h-px bg-primary" />
+            <span className="text-primary font-mono text-sm tracking-wider uppercase">
+              Projects
+            </span>
+            <div className="w-12 h-px bg-primary" />
+          </div>
+
+          {/* Section Headers */}
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Things I&apos;ve Built
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            A selection of projects that showcase my skills and passion for
+            building innovative solutions.
+          </p>
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-          Things I&apos;ve Built
-        </h2>
-        <p className="text-muted-foreground text-lg mb-12 max-w-2xl">
-          A selection of projects that showcase my skills and passion for
-          building innovative solutions.
-        </p>
-
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* Left-Aligned Projects Grid */}
+        <div className="grid md:grid-cols-2 gap-6 w-full">
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group bg-secondary/50 border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300"
+              className="group bg-secondary/50 border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 flex flex-col justify-between"
             >
-              <div className="flex items-start justify-between mb-4">
-                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <div className="flex items-center gap-3">
-                  <Link
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                    aria-label={`GitHub repository for ${project.title}`}
-                  >
-                    <Github className="w-5 h-5" />
-                  </Link>
-
-                  {/* The fix: This checks if project.live exists before rendering the link */}
-                  {project.live && (
+              <div>
+                {/* Card Title & GitHub Links Split Left/Right */}
+                <div className="flex items-start justify-between mb-4 gap-4">
+                  <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <div className="flex items-center gap-3 shrink-0">
                     <Link
-                      href={project.live}
+                      href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary transition-colors"
-                      aria-label={`Live demo of ${project.title}`}
+                      aria-label={`GitHub repository for ${project.title}`}
                     >
-                      <ExternalLink className="w-5 h-5" />
+                      <Github className="w-5 h-5" />
                     </Link>
-                  )}
+
+                    {project.live && (
+                      <Link
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label={`Live demo of ${project.title}`}
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </Link>
+                    )}
+                  </div>
                 </div>
+
+                {/* Left-Aligned Description */}
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  {project.description}
+                </p>
               </div>
 
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                {project.description}
-              </p>
-
+              {/* Left-Aligned Tags Container */}
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span
@@ -116,6 +128,7 @@ export function Projects() {
           ))}
         </div>
 
+        {/* Bottom Call to Action */}
         <div className="mt-12 text-center">
           <Link
             href="https://github.com/UnmatchedPerspicacious"

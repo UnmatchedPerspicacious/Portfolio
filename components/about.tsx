@@ -1,14 +1,20 @@
 export function About() {
   return (
-    <section id="about" className="py-24 px-6 md:px-12 lg:px-24">
-      <div className="max-w-4xl">
-        <div className="flex items-center gap-4 mb-12">
+    <section 
+      id="about" 
+      className="min-h-screen max-w-6xl mx-auto flex flex-col justify-center items-center pt-24"
+    >
+      <div className="max-w-4xl flex flex-col items-center text-center">
+        {/* Section Header */}
+        <div className="flex items-center gap-4 mb-12 justify-center">
           <div className="w-12 h-px bg-primary" />
           <span className="text-primary font-mono text-sm tracking-wider uppercase">
             About
           </span>
+          <div className="w-12 h-px bg-primary" /> {/* Added matching right accent line for symmetry */}
         </div>
 
+        {/* Paragraph Blocks */}
         <div className="space-y-6 text-muted-foreground leading-relaxed">
           <p className="text-lg md:text-xl">
             I&apos;m a <span className="text-primary font-semibold">serial founder</span> at 18, driven by an
@@ -33,14 +39,15 @@ export function About() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+        {/* Stats Grid */}
+        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 w-full">
           {[
             { label: "Ventures Founded", value: "2+" },
             { label: "Projects Built", value: "10+" },
             { label: "Years Coding", value: "3+" },
             { label: "Cups of Coffee", value: "∞" },
           ].map((stat) => (
-            <div key={stat.label} className="text-center md:text-left">
+            <div key={stat.label} className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                 {stat.value}
               </div>

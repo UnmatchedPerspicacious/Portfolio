@@ -7,21 +7,21 @@ const startups = [
     name: "CryptoVision",
     description:
       "A cutting-edge cryptocurrency analytics platform providing real-time market insights, predictive analysis, and portfolio management tools for traders and investors.",
-    role: "Founder & CEO",
+    role: "Founder, CEO, CTO, CMO",
     status: "Actively Building",
     tags: ["Fintech", "Crypto", "Analytics", "AI"],
-    link: "#",
-    image: "/CryptoVision.png", // Add your image path here
+    link: "/startups/cryptovision",
+    image: "/CryptoVision.png",
   },
   {
     name: "TradeWave",
     description:
       "An innovative trading platform that democratizes access to financial markets through intuitive interfaces, automated strategies, and educational resources for new traders.",
-    role: "Co-Founder",
+    role: "Founder, CEO, CTO, CFO",
     status: "Actively Building",
     tags: ["Trading", "Finance", "Platform", "Education"],
-    link: "#",
-    image: "/TradeWave.png", // Add your image path here
+    link: "/startups/tradewave",
+    image: "/TradeWave.png",
   },
 ];
 
@@ -57,7 +57,7 @@ export function Startups() {
                   <div className="flex items-center gap-4">
 
                     {/* Startup Image Container */}
-                    <div className="relative w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center overflow-hidden border border-primary/20 group-hover:border-primary/40 transition-colors flex-shrink-0">
+                    <div className="relative w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center overflow-hidden border border-primary/20 group-hover:border-primary/40 transition-colors flex-shrink-0">
                       <Image
                         src={startup.image}
                         alt={`${startup.name} Logo`}
@@ -97,7 +97,7 @@ export function Startups() {
                 </div>
 
                 <Link
-                  href="#contact"
+                  href={startup.link}
                   className="inline-flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium group/link"
                 >
                   Learn more
