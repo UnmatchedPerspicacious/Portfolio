@@ -85,7 +85,7 @@ export function Hero() {
           <div className="flex-shrink-0 order-1 lg:order-2 mx-auto lg:mx-0">
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden border-2 border-primary/30 bg-secondary/50 shadow-xl">
               <Image
-                src="/portfolio-image.jpg"
+                src="/portfolio-image.png"
                 alt="Eshel Nagar Portfolio Image"
                 fill
                 priority
