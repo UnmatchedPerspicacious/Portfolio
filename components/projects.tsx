@@ -1,4 +1,5 @@
 import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const projects = [
@@ -9,6 +10,7 @@ const projects = [
     tags: ["Python", "Scikit-learn", "HuggingFace", "Streamlit"],
     github: "https://github.com/UnmatchedPerspicacious/uk-house-price-predictor",
     live: "https://united-kingdom-house-price-predictor.streamlit.app/",
+    image: "/home.svg",
   },
   {
     title: "Movie Sentiment Analyser",
@@ -17,6 +19,7 @@ const projects = [
     tags: ["Python", "DistilBERT", "PyTorch", "Transformers"],
     github: "https://github.com/UnmatchedPerspicacious/Movie-Sentiment-Analyser",
     live: "https://movie-sentiment-analyser.streamlit.app/",
+    image: "/movie.svg",
   },
   {
     title: "Customer Segmentation Engine",
@@ -24,6 +27,7 @@ const projects = [
       "RFM analysis and K-Means clustering on 500k+ real B2B transactions. Segments customers into Champions, Loyal, At-Risk, and Lost cohorts with interactive visualisations.",
     tags: ["Python", "Scikit-learn", "K-Means", "Pandas"],
     github: "https://github.com/UnmatchedPerspicacious/customer-segmentation-rfm",
+    image: "/segmentation.svg",
   },
   {
     title: "Cluster Explorer",
@@ -32,6 +36,7 @@ const projects = [
     tags: ["Python", "PCA", "t-SNE", "DBSCAN"],
     github: "https://github.com/UnmatchedPerspicacious/Cluster-Explorer",
     live: "https://cluster-explorer.streamlit.app/",
+    image: "/data.svg",
   },
   {
     title: "News Topic Explorer",
@@ -40,6 +45,15 @@ const projects = [
     tags: ["Python", "BERTopic", "UMAP", "HDBSCAN"],
     github: "https://github.com/UnmatchedPerspicacious/News-Topic-Explorer",
     live: "https://news-topic-explorer.streamlit.app/",
+    image: "/newspaper.svg",
+  },
+  {
+    title: "Doculoom",
+    description:
+      "AI-powered SaaS that transforms long informational videos into structured PDF summaries — helping learners absorb hours of content in minutes.",
+    tags: ["Next.js", "AI", "PDF Generation", "SaaS"],
+    live: "https://doculoom.vercel.app/",
+    image: "/video.svg",
   },
 ];
 
@@ -47,10 +61,9 @@ export function Projects() {
   return (
     <section id="projects" className="py-24 px-6 md:px-12 lg:px-24 bg-card">
       <div className="max-w-6xl mx-auto">
-        
+
         {/* Centered Head Text Wrapper */}
         <div className="flex flex-col items-center text-center mb-12">
-          {/* Section Tag */}
           <div className="flex items-center gap-4 mb-4 justify-center">
             <div className="w-12 h-px bg-primary" />
             <span className="text-primary font-mono text-sm tracking-wider uppercase">
@@ -58,8 +71,6 @@ export function Projects() {
             </span>
             <div className="w-12 h-px bg-primary" />
           </div>
-
-          {/* Section Headers */}
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Things I&apos;ve Built
           </h2>
@@ -69,66 +80,80 @@ export function Projects() {
           </p>
         </div>
 
-        {/* Left-Aligned Projects Grid */}
+        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-6 w-full">
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group bg-secondary/50 border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 flex flex-col justify-between"
+              className="group bg-secondary/50 border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col"
             >
-              <div>
-                {/* Card Title & GitHub Links Split Left/Right */}
-                <div className="flex items-start justify-between mb-4 gap-4">
-                  <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <div className="flex items-center gap-3 shrink-0">
-                    <Link
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                      aria-label={`GitHub repository for ${project.title}`}
-                    >
-                      <Github className="w-5 h-5" />
-                    </Link>
-
-                    {project.live && (
-                      <Link
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                        aria-label={`Live demo of ${project.title}`}
-                      >
-                        <ExternalLink className="w-5 h-5" />
-                      </Link>
-                    )}
-                  </div>
-                </div>
-
-                {/* Left-Aligned Description */}
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {project.description}
-                </p>
+              {/* Illustration Banner */}
+              <div className="w-full h-48 bg-primary/5 border-b border-border flex items-center justify-center p-6">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={180}
+                  height={160}
+                  className="object-contain h-full w-auto"
+                />
               </div>
 
-              {/* Left-Aligned Tags Container */}
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs font-mono text-primary bg-primary/10 px-3 py-1 rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="p-6 flex flex-col flex-1 justify-between">
+                <div>
+                  {/* Title & Links */}
+                  <div className="flex items-start justify-between mb-4 gap-4">
+                    <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <div className="flex items-center gap-3 shrink-0">
+                      {project.github && (
+                        <Link
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                          aria-label={`GitHub repository for ${project.title}`}
+                        >
+                          <Github className="w-5 h-5" />
+                        </Link>
+                      )}
+                      {project.live && (
+                        <Link
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                          aria-label={`Live demo of ${project.title}`}
+                        >
+                          <ExternalLink className="w-5 h-5" />
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs font-mono text-primary bg-primary/10 px-3 py-1 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom Call to Action */}
+        {/* Bottom CTA */}
         <div className="mt-12 text-center">
           <Link
             href="https://github.com/UnmatchedPerspicacious"
