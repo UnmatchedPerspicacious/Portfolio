@@ -123,9 +123,9 @@ export default function CryptoVisionPage() {
                 key={stat.label}
                 className="bg-card border border-border rounded-xl p-6 text-center"
               >
-                <p className="text-2xl font-bold text-primary mb-1">{stat.value}</p>
+                <p className="text-2xl font-bold text-primary mb-1">{stat.label}</p>
                 <p className="text-muted-foreground font-mono text-xs tracking-wider uppercase">
-                  {stat.label}
+                  {stat.value}
                 </p>
               </div>
             ))}

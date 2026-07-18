@@ -47,14 +47,6 @@ const projects = [
     live: "https://news-topic-explorer.streamlit.app/",
     image: "/newspaper.svg",
   },
-  {
-    title: "Doculoom",
-    description:
-      "AI-powered SaaS that transforms long informational videos into structured PDF summaries — helping learners absorb hours of content in minutes.",
-    tags: ["Next.js", "AI", "PDF Generation", "SaaS"],
-    live: "https://doculoom.vercel.app/",
-    image: "/video.svg",
-  },
 ];
 
 export function Projects() {

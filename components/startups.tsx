@@ -23,6 +23,16 @@ const startups = [
     link: "/startups/tradewave",
     image: "/TradeWave.png",
   },
+  {
+    name: "DocuLoom",
+    description:
+      "AI-powered onboarding tool that turns written processes into beautiful PDFs and auto-generated quizzes — share them with your workers and track results with built-in statistics.",
+    role: "Founder, CEO, CTO",
+    status: "Live",
+    tags: ["SaaS", "AI", "Onboarding", "HR Tech", "PDF Generation", "Quizzes"],
+    link: "/startups/doculoom",
+    image: "/DocuLoom.png",
+  },
 ];
 
 export function Startups() {

@@ -1,54 +1,54 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, TrendingUp, BarChart2, Bot, FlaskConical, Target, LineChart } from "lucide-react";
+import { ArrowLeft, ExternalLink, FileText, PenLine, ClipboardCheck, Share2, BarChart3, Clock } from "lucide-react";
 
 const features = [
   {
-    icon: BarChart2,
-    title: "Stock Pattern Training",
+    icon: PenLine,
+    title: "Write Your Process",
     description:
-      "The algorithm is trained on a wide range of technical patterns across equities — from classic chart formations to complex multi-timeframe confluences that signal high-conviction entries.",
+      "Write your process in plain format — rough notes, bullet points, or full write-ups. No templates, no markup, no formatting rules to learn.",
   },
   {
-    icon: FlaskConical,
-    title: "Active Backtesting",
+    icon: FileText,
+    title: "Beautiful PDF Generation",
     description:
-      "Currently in rigorous backtesting across years of stock market data. Every strategy is stress-tested across bull markets, bear markets, and sideways conditions before deployment.",
+      "AI weaves your writing into a polished, structured PDF with headings, sections, and key points — ready to hand to a new hire or drop into your knowledge base.",
   },
   {
-    icon: Bot,
-    title: "Automated Trading Engine",
+    icon: ClipboardCheck,
+    title: "Auto-Generated Quizzes",
     description:
-      "Once live, TradeWave will execute trades autonomously — scanning the market, identifying setups, and managing positions without any manual intervention required.",
+      "From the same process, DocuLoom automatically creates a quiz that tests workers on the steps and details that matter — no question-writing required.",
   },
   {
-    icon: Target,
-    title: "Individual Investor Focus",
+    icon: Share2,
+    title: "Share With Your Workers",
     description:
-      "Built for retail traders and individual investors who want systematic, emotion-free trading without the complexity of building their own infrastructure.",
+      "Send the quiz straight to your team. Workers take it and pass it, so you know exactly who has completed their onboarding.",
   },
   {
-    icon: LineChart,
-    title: "Performance Analytics",
+    icon: BarChart3,
+    title: "Statistics & Insights",
     description:
-      "Detailed reporting on every trade — win rate, average R:R, maximum drawdown, Sharpe ratio, and equity curves — so users always know exactly how the algorithm is performing.",
+      "Track quiz results across your team — see who has taken it, who passed, and where people struggle, all in one place.",
   },
   {
-    icon: TrendingUp,
-    title: "Continuous Learning (Roadmap)",
+    icon: Clock,
+    title: "Faster Ramp-Up",
     description:
-      "The long-term vision includes an adaptive model that learns from live market conditions, refining its pattern recognition as markets evolve.",
+      "Pages of rough notes become a focused document and a pass/fail check a new team member can complete in minutes — cutting onboarding time from days to hours.",
   },
 ];
 
 const stats = [
-  { label: "Market", value: "Stocks" },
-  { label: "Target Users", value: "Retail" },
-  { label: "Execution", value: "Automated" },
-  { label: "Status", value: "Training" },
+  { label: "Input", value: "Plain Text" },
+  { label: "Output", value: "PDF + Quiz" },
+  { label: "Built For", value: "Onboarding" },
+  { label: "Status", value: "Live" },
 ];
 
-export default function TradeWavePage() {
+export default function DocuLoomPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
 
@@ -77,8 +77,8 @@ export default function TradeWavePage() {
             <div className="flex items-center gap-6">
               <div className="relative w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center overflow-hidden border border-primary/20 flex-shrink-0">
                 <Image
-                  src="/TradeWave.png"
-                  alt="TradeWave Logo"
+                  src="/DocuLoom.png"
+                  alt="DocuLoom Logo"
                   fill
                   sizes="80px"
                   className="object-cover object-center"
@@ -86,33 +86,44 @@ export default function TradeWavePage() {
               </div>
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
-                  TradeWave
+                  DocuLoom
                 </h1>
-                <p className="text-primary font-medium">Co-Founder</p>
+                <p className="text-primary font-medium">Founder & CEO</p>
               </div>
             </div>
-            <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-full w-fit">
-              Actively Building
-            </span>
+            <div className="flex items-center gap-4">
+              <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-full w-fit">
+                Live
+              </span>
+              <Link
+                href="https://doculoom.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-semibold rounded-full hover:opacity-90 transition-opacity w-fit"
+              >
+                Visit DocuLoom
+                <ExternalLink className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
 
           {/* Vision statement */}
           <div className="max-w-3xl mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 leading-snug">
-              Algorithmic stock trading,{" "}
-              <span className="text-primary">built for everyone.</span>
+              Onboarding that takes{" "}
+              <span className="text-primary">minutes, not days.</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-              TradeWave is an automated stock trading platform built for individual
-              investors. At its core is a trading algorithm currently in active
-              development — being trained, refined, and backtested across years of
-              equity market data to identify high-probability setups with precision.
+              DocuLoom is an AI-powered onboarding tool built around a simple
+              flow: write your process in plain text, and it generates a
+              beautiful, structured PDF — then automatically builds a quiz from
+              it to test your workers on what they&apos;ve learned.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              The goal is simple: give retail investors access to a systematic,
-              emotion-free trading engine that operates with the discipline and
-              consistency that no human trader can maintain. No FOMO, no panic selling
-              — just data-driven execution, every time.
+              Share the quiz with your team and watch the statistics come in —
+              who took it, who passed, and where they struggled — so you know
+              every new team member truly understands the process, not just
+              that they read it.
             </p>
           </div>
 
@@ -129,27 +140,6 @@ export default function TradeWavePage() {
                 </p>
               </div>
             ))}
-          </div>
-
-          {/* Current phase callout */}
-          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 mb-24">
-            <div className="flex items-center gap-3 mb-4">
-              <FlaskConical className="w-5 h-5 text-primary" />
-              <span className="text-primary font-mono text-sm tracking-wider uppercase font-semibold">
-                Current Phase
-              </span>
-            </div>
-            <h3 className="text-xl font-bold text-foreground mb-3">
-              Training & Backtesting
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              TradeWave is currently in its most critical phase — building and validating
-              the core algorithm. The model is being trained on a broad range of stock
-              chart patterns and technical signals, then backtested against historical
-              market data to measure real-world performance before any live deployment.
-              This phase is non-negotiable: the algorithm doesn&apos;t go live until the
-              numbers prove it&apos;s ready.
-            </p>
           </div>
 
           {/* Features */}
@@ -184,7 +174,7 @@ export default function TradeWavePage() {
             </span>
           </div>
           <div className="flex flex-wrap gap-3">
-            {["Fintech", "Stock Trading", "Algorithmic Trading", "Machine Learning", "Backtesting", "Automation", "Retail Finance", "Quantitative Analysis"].map((tag) => (
+            {["SaaS", "AI", "Onboarding", "HR Tech", "Next.js", "PDF Generation", "Quiz Generation", "Analytics"].map((tag) => (
               <span
                 key={tag}
                 className="text-sm font-mono text-primary bg-primary/10 px-4 py-2 rounded-full"
